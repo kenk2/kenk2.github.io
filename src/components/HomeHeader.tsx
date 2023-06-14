@@ -24,7 +24,7 @@ export default function HomeHeader(props: HomeHeaderProps) {
           padding: 1,
         }}
       >
-        <Avatar src={img} sx={{ width: 150, height: 150 }} />
+        <Avatar alt="Me" src={img} sx={{ width: 150, height: 150 }} />
       </Grid>
 
       <Grid
