@@ -1,9 +1,18 @@
 import Head from "next/head";
-import { createClient } from "contentful";
+import { AssetFile, createClient } from "contentful";
 import { CustomLink, HomeHeader } from "@kenk2/components";
 import { Box, Typography, Divider } from "@mui/material";
 
-export default function Home(props) {
+type HomeProps = {
+  props: {
+    items: AssetFile[];
+  };
+};
+
+export default function Home(props: HomeProps) {
+  const {
+    props: { items },
+  } = props;
   return (
     <>
       <Head>
@@ -13,7 +22,9 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box>
-        <HomeHeader img={"https:" + props.props.pictures.url} />
+        <HomeHeader
+          img={`https:${items.find((x) => x.fileName === "me.jpg")?.url}`}
+        />
         <Typography paragraph>Thanks for visiting my website!</Typography>
         <Typography paragraph>
           I&apos;m Full-Stack Software Engineer with an eye for good UI and
@@ -66,12 +77,13 @@ export async function getStaticProps() {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || "",
   });
 
-  const result = await client.getEntries({ content_type: "image" });
-  const pictures = result.items.map((x) => x?.fields?.picture?.fields?.file)[0];
+  const result = (await client.getAssets("images")).items.map(
+    (x) => x.fields.file
+  );
 
   return {
     props: {
-      pictures,
+      items: result,
     },
   };
 }
