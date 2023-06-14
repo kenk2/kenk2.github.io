@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <NavigationBar />
       <Box
         sx={{
-          margin: "0 auto",
+          margin: "16px auto",
           padding: 2,
           width: "100%",
           maxWidth: "700px",

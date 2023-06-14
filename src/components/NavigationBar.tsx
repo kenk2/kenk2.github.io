@@ -34,10 +34,10 @@ export default function NavigationBar() {
           </Link>
         </Box>
         <Box sx={{ display: "flex" }}>
-          <Link href="/">
+          <Link href="/blog">
             <Typography sx={{ display: "flex", marginRight: 2 }}>
               <ArticleIcon sx={{ marginRight: 1 }} />
-              About Me
+              Blog
             </Typography>
           </Link>
         </Box>
