@@ -1,14 +1,11 @@
 import { Box, Divider, Typography } from "@mui/material";
 import CustomLink from "./CustomLink";
+import HomeHeader from "./HomeHeader";
 
 export default function HomePage() {
   return (
     <Box>
-      <Box>
-        <Typography variant="h3" paragraph>
-          Hi, I&apos;m Kenny!
-        </Typography>
-      </Box>
+      <HomeHeader />
       <Typography paragraph>Thanks for visiting my website!</Typography>
       <Typography paragraph>
         I&apos;m Full-Stack Software Engineer with an eye for good UI and
