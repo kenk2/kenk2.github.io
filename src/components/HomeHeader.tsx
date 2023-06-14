@@ -16,7 +16,7 @@ export default function HomeHeader(props: HomeHeaderProps) {
       <Grid
         item
         xs={12}
-        sm={2}
+        sm={4}
         sx={{
           display: "flex",
           justifyContent: "center",
@@ -24,13 +24,13 @@ export default function HomeHeader(props: HomeHeaderProps) {
           padding: 1,
         }}
       >
-        <Avatar src={img} sx={{ width: 100, height: 100 }} />
+        <Avatar src={img} sx={{ width: 150, height: 150 }} />
       </Grid>
 
       <Grid
         item
         xs={12}
-        sm={10}
+        sm={8}
         sx={(theme) => ({
           display: "flex",
           justifyContent: "center",
@@ -50,7 +50,7 @@ export default function HomeHeader(props: HomeHeaderProps) {
             },
           })}
         >
-          Hi, I&apos;m Kenny Kim!
+          👋 Hi, I&apos;m Kenny Kim!
         </Typography>
       </Grid>
     </Grid>
