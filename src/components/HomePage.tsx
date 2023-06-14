@@ -29,8 +29,15 @@ export default function HomePage() {
       </Typography>
       <Divider sx={{ marginTop: 2, marginBottom: 2 }} />
       <Typography variant="h4">Links & Contact</Typography>
+      <Typography paragraph sx={{ marginTop: 2 }}>
+        Want to work with me?{" "}
+        <CustomLink
+          url="mailto:kenk2@thedev.mozmail.com"
+          name="Shoot me an Email!"
+        />
+      </Typography>
       <Typography paragraph>
-        You can catch me on other platforms! I&apos;m on the following:
+        You can also catch me on other platforms! I&apos;m on the following:
       </Typography>
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <CustomLink
