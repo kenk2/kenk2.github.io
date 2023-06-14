@@ -7,9 +7,11 @@ type HomePageLinkProps = {
 
 export default function CustomLink(props: HomePageLinkProps) {
   const { name, url } = props;
+
   return (
     <Link
       target="_blank"
+      rel="noopener"
       underline="none"
       href={url}
       sx={{ fontWeight: "bold" }}

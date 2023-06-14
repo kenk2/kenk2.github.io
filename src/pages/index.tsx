@@ -1,7 +1,8 @@
 import Head from "next/head";
+import { Box, Typography, Divider, List, ListItem } from "@mui/material";
 import { AssetFile, createClient } from "contentful";
 import { CustomLink, HomeHeader } from "@kenk2/components";
-import { Box, Typography, Divider } from "@mui/material";
+import { companies, socials } from "@kenk2/constants";
 
 type HomeProps = {
   props: {
@@ -29,13 +30,17 @@ export default function Home(props: HomeProps) {
         <Typography paragraph>
           I&apos;m Full-Stack Software Engineer with an eye for good UI and
           building better user experiences. Previously at:{" "}
-          <CustomLink url="https://klaviyo.com" name="Klaviyo" />,{" "}
-          <CustomLink url="https://airvet.com" name="Airvet" />,{" "}
-          <CustomLink url="https://macu.com" name="MACU" />, and{" "}
-          <CustomLink
-            url="https://hexagon.com/company/divisions/manufacturing-intelligence/msc-software"
-            name="MSC Software"
-          />
+          {companies.map((company, i) => (
+            <>
+              {i > 0 && ", "}
+              {i === companies.length - 1 && "and "}
+              <CustomLink
+                key={company.url}
+                url={company.url}
+                name={company.name}
+              />
+            </>
+          ))}
           .
         </Typography>
         <Typography paragraph>
@@ -43,7 +48,7 @@ export default function Home(props: HomeProps) {
           Come back often for updates!
         </Typography>
         <Typography paragraph>
-          LetI&apos;s work together to build great apps and make the world a
+          Let&apos;s work together to build great apps and make the world a
           better place to be!
         </Typography>
         <Divider sx={{ marginTop: 2, marginBottom: 2 }} />
@@ -58,14 +63,13 @@ export default function Home(props: HomeProps) {
         <Typography paragraph>
           You can also catch me on other platforms! I&apos;m on the following:
         </Typography>
-        <Box sx={{ display: "flex", flexDirection: "column" }}>
-          <CustomLink
-            url="https://linkedin.com/in/kenk-9cfn483"
-            name="Linkedin"
-          />
-          <CustomLink url="https://github.com/kenk2" name="Github" />
-          <CustomLink url="https://leetcode.com/kenk2" name="Leetcode" />
-        </Box>
+        <List dense disablePadding>
+          {socials.map((social) => (
+            <ListItem disableGutters key={social.url}>
+              <CustomLink url={social.url} name={social.name} />
+            </ListItem>
+          ))}
+        </List>
       </Box>
     </>
   );
