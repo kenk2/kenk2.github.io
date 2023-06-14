@@ -1,4 +1,5 @@
-import HomePage from "./HomePage";
 import NavigationBar from "./NavigationBar";
+import CustomLink from "./CustomLink";
+import HomeHeader from "./HomeHeader";
 
-export { HomePage, NavigationBar };
+export { CustomLink, HomeHeader, NavigationBar };

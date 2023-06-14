@@ -1,6 +1,11 @@
 import { Grid, Avatar, Typography } from "@mui/material";
 
-export default function HomeHeader() {
+type HomeHeaderProps = {
+  img: string;
+};
+
+export default function HomeHeader(props: HomeHeaderProps) {
+  const { img } = props;
   return (
     <Grid
       container
@@ -19,7 +24,7 @@ export default function HomeHeader() {
           padding: 1,
         }}
       >
-        <Avatar src="" sx={{ width: 100, height: 100 }} />
+        <Avatar src={img} sx={{ width: 100, height: 100 }} />
       </Grid>
 
       <Grid
