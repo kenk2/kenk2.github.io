@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Box, Typography, Divider, List, ListItem } from "@mui/material";
+import { Box, Typography, Divider } from "@mui/material";
 import { AssetFile, createClient } from "contentful";
 import { CustomLink, HomeHeader } from "@kenk2/components";
 import { companies, socials } from "@kenk2/constants";
@@ -52,7 +52,7 @@ export default function Home(props: HomeProps) {
           better place to be!
         </Typography>
         <Divider sx={{ marginTop: 2, marginBottom: 2 }} />
-        <Typography variant="h4">Links & Contact</Typography>
+        <Typography variant="h5">Links & Contact</Typography>
         <Typography paragraph sx={{ marginTop: 2 }}>
           Want to work with me?{" "}
           <CustomLink
@@ -63,13 +63,11 @@ export default function Home(props: HomeProps) {
         <Typography paragraph>
           You can also catch me on other platforms! I&apos;m on the following:
         </Typography>
-        <List dense disablePadding>
-          {socials.map((social) => (
-            <ListItem disableGutters key={social.url}>
-              <CustomLink url={social.url} name={social.name} />
-            </ListItem>
-          ))}
-        </List>
+        {socials.map((social) => (
+          <Typography key={social.url}>
+            <CustomLink url={social.url} name={social.name} />
+          </Typography>
+        ))}
       </Box>
     </>
   );
