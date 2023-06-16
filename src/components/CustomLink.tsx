@@ -12,9 +12,12 @@ export default function CustomLink(props: HomePageLinkProps) {
     <Link
       target="_blank"
       rel="noopener"
-      underline="none"
       href={url}
-      sx={{ fontWeight: "bold" }}
+      underline="none"
+      sx={(theme) => ({
+        fontWeight: "bold",
+        color: theme.palette.info.light,
+      })}
     >
       {name}
     </Link>
