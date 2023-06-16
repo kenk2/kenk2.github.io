@@ -3,6 +3,7 @@ import { Box, Typography, Divider } from "@mui/material";
 import { AssetFile, createClient } from "contentful";
 import { CustomLink, HomeHeader } from "@kenk2/components";
 import { companies, socials } from "@kenk2/constants";
+import React from "react";
 
 type HomeProps = {
   props: {
@@ -31,15 +32,11 @@ export default function Home(props: HomeProps) {
           I&apos;m Full-Stack Software Engineer with an eye for good UI and
           building better user experiences. Previously at:{" "}
           {companies.map((company, i) => (
-            <>
+            <React.Fragment key={company.url}>
               {i > 0 && ", "}
               {i === companies.length - 1 && "and "}
-              <CustomLink
-                key={company.url}
-                url={company.url}
-                name={company.name}
-              />
-            </>
+              <CustomLink url={company.url} name={company.name} />
+            </React.Fragment>
           ))}
           .
         </Typography>
