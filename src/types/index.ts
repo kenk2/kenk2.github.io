@@ -3,4 +3,15 @@ type SiteLink = {
   name: string;
 };
 
-export default SiteLink;
+type BlogEntryMetaData = {
+  content: string;
+  data: {
+    title: string;
+    date: string;
+    tags: string[];
+    slug: string;
+    summary: string;
+  };
+};
+
+export type { SiteLink, BlogEntryMetaData };

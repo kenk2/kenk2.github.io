@@ -1,4 +1,4 @@
-import SiteLink from "@kenk2/types";
+import type { SiteLink } from "@kenk2/types";
 
 const companies: SiteLink[] = [
   { url: "https://klaviyo.com", name: "Klaviyo" },
