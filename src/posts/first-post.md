@@ -6,4 +6,6 @@ summary: "The first blog post"
 slug: "first-post"
 ---
 
-Hello World
+## Hello World
+
+There is content in this post.
