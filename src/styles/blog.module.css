@@ -1,0 +1,10 @@
+.reactMarkdown h3,
+.reactMarkdown p {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.reactMarkdown a {
+  font-weight: bold;
+  color: #03a9f4;
+}

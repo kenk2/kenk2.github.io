@@ -16,14 +16,15 @@ export default function BlogEntry(props: BlogEntryProps) {
   return (
     <>
       <Grid container sx={{ display: "flex", alignItems: "baseline" }}>
-        <Grid xs={12} sm={3}>
+        <Grid item xs={12} sm={3}>
           <Typography variant="subtitle1">{date}</Typography>
         </Grid>
-        <Grid sm={9}>
+        <Grid item sm={9}>
           <Typography variant="h6">
             <Link href={url}>{metaData.data.title}</Link>
           </Typography>
           <Box sx={{ display: "flex", flexWrap: "wrap" }}>
+            <Typography variant="subtitle2" sx={{marginRight: 1 }}>Tags:</Typography>
             {metaData.data.tags.map((tag) => (
               <Typography variant="button" key={tag} sx={{ marginRight: 1 }}>
                 <CustomLink url={`/tags/${tag}`} name={tag} />

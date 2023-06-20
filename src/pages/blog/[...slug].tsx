@@ -7,6 +7,8 @@ import { BlogEntryMetaData } from "@kenk2/types";
 import { format } from "date-fns";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
+import styles from "../../styles/blog.module.css";
+
 export async function getStaticPaths() {
   const dir = path.join(cwd(), "src", "posts");
   const files = await fs.readdir(dir);
@@ -51,10 +53,12 @@ export default function Slug(props: BlogSlugProps) {
 
   return (
     <Box>
-      <Typography variant="h4">{postData.data.title}</Typography>
+      <Typography variant="h5">{postData.data.title}</Typography>
       <Typography variant="subtitle1">{date}</Typography>
       <Divider sx={{ marginTop: 1, marginBottom: 1 }} />
-      <ReactMarkdown>{postData.content}</ReactMarkdown>
+      <ReactMarkdown className={styles.reactMarkdown}>
+        {postData.content}
+      </ReactMarkdown>
     </Box>
   );
 }
