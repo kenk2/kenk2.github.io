@@ -11,7 +11,7 @@ const companies: SiteLink[] = [
 ];
 
 const socials: SiteLink[] = [
-  { url: "https://linkedin.com/in/kenk-9cfn483", name: "Linkedin" },
+  { url: "https://www.linkedin.com/in/kenk2", name: "Linkedin" },
   { url: "https://github.com/kenk2", name: "Github" },
   { url: "https://leetcode.com/kenk2", name: "Leetcode" },
 ];
