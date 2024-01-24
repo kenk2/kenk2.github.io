@@ -29,7 +29,7 @@ export default function Home(props: HomeProps) {
         />
         <Typography paragraph>Thanks for visiting my website!</Typography>
         <Typography paragraph>
-          I&apos;m Full-Stack Software Engineer with an eye for good UI and
+          I&apos;m a Full-Stack Software Engineer with an eye for good UI and
           building better user experiences. Previously at:{" "}
           {companies.map((company, i) => (
             <React.Fragment key={company.url}>
